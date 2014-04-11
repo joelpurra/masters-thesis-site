@@ -93,16 +93,20 @@
         display: none;
     }
     </style>
+    <style>
+    h1 small, h2 small, h3 small {
+        color: lightgrey;
+        font-size: 0.5em;
+    }
+    </style>
 </head>
 
 <body>
     <header>
         <h1>
             Joel Purra's master's thesis
+            <small>work in progress</small>
         </h1>
-        <p>
-            <a href="https://www.liu.se/utbildning/program/informationsteknologi">Master of Science in Information Technology and Engineering</a>, <a href="https://liu.se/">Linköping University</a>, Sweden
-        </p>
         <nav>
             <ul class="inline-menu">
                 <!--
@@ -111,10 +115,13 @@
                 </li>
                 -->
                 <li>
+                    <a href="http://joelpurra.com/projects/masters-thesis/" rel="home">Project page</a>
+                </li>
+                <li>
                     <a href="https://github.com/joelpurra/masters-thesis">Document sources</a>
                 </li>
                 <li>
-                    <a href="http://joelpurra.com/projects/masters-thesis/" rel="home">Project page</a>
+                    <a href="http://joelpurra.com/" rel="author me">joelpurra.com</a>
                 </li>
             </ul>
         </nav>
@@ -127,6 +134,10 @@
                 <em>Swedes Online: You Are More Tracked Than You Think</em>
             </h1>
 
+            <p>
+                <em class="warning">The thesis is currently in the process of being researched and written!</em>
+            </p>
+
             <h2>
                 Abstract
             </h2>
@@ -138,20 +149,6 @@
             </p>
             <p>
                 To show the overlap between different sites, front pages of Swedish top sites were downloaded and their resources counted and grouped. In this thesis I show the use of resources internal versus external to the entry domain, which the most common confirmed trackers are, what spread they have and how much the average Swedish internet user can expect to be tracked by visiting some of the most import and popular sites in Sweden.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                Introduction
-            </h2>
-
-            <p>
-                <em class="warning">The thesis is currently in the process of being researched and written!</em>
-            </p>
-
-            <p>
-                Decided to put my master's thesis online, as work in progress - comments, suggestions and pull requests welcome!
             </p>
         </section>
 
@@ -212,78 +209,42 @@
 
         <section>
             <h2>
-                Open source projects
-            </h2>
-            <p>
-                The power is in your hands.
-                <em>Use the source, Luke!</em>
-            </p>
-            <ul>
-                <li>
-                    <a href="https://github.com/joelpurra/masters-thesis" rel="source">masters-thesis</a>: the source code for the thesis documents.
-                </li>
-                <li>
-                    <a href="https://github.com/joelpurra/masters-thesis-site" rel="source">masters-thesis-site</a>: the source code for this page.
-                </li>
-            </ul>
-        </section>
-
-
-        <section>
-            <h2>
-                Results
-            </h2>
-
-            <p>
-                Documents and other results, as published when they are considered finished.
-            </p>
-
-            <section>
-                <h3>
-                    <time datetime="2014-02-07T17:42:00Z" title="2014-02-07T17:42:00Z">
-                        2014-02-07T17:42:00Z
-                    </time> <a href="http://joelpurra.com/projects/masters-thesis/files/documents/latest/joepu444-thesis-proposal-2014-02-07T1742Z.pdf">Thesis subject proposal</a>
-                </h3>
-                <p>
-                    A broadly formulated subject proposal, which allowed .SE and I to specify direction and scope after an initial survey.
-                </p>
-            </section>
-
-            <!-- 
-            <details>
-                <summary>View older documents</summary>
-
-            </details>
-            -->
-        </section>
-
-
-        <section>
-            <h2>
                 Work in progress
             </h2>
 
             <p>
-                Documents as they are being written.
+                Documents published as they are being written - comments, suggestions and pull requests welcome!
             </p>
 
             <section>
                 <h3>
+                    <!-- 
                     <time datetime="2014-04-09T14:13:00Z" title="2014-04-09T14:13:00Z">
                         2014-04-09T14:13:00Z
-                    </time> <a href="http://joelpurra.com/projects/masters-thesis/files/documents/latest/joel-purra_masters-thesis_planning.pdf">Thesis planning and draft</a>
+                    </time>
+                     -->
+                    <a href="http://joelpurra.com/projects/masters-thesis/files/documents/latest/joel-purra_masters-thesis_planning.pdf">Thesis planning and draft</a>
                 </h3>
                 <p>
                     A document that combines planning with ongoing thesis writing. Read the abstract and background for an overview.
                 </p>
             </section>
 
-            <!-- 
-            <details>
-                <summary>View older documents</summary>
 
+            <details>
+                <summary>Finished documents</summary>
+
+                <section>
+                    <h3>
+                        <time datetime="2014-02-07T17:42:00Z" title="2014-02-07T17:42:00Z">
+                            2014-02-07T17:42:00Z
+                        </time> <a href="http://joelpurra.com/projects/masters-thesis/files/documents/latest/joepu444-thesis-proposal-2014-02-07T1742Z.pdf">Thesis subject proposal</a>
+                    </h3>
+                    <p>
+                        A broadly formulated subject proposal, which allowed .SE and I to specify direction and scope after an initial survey.
+                    </p>
+                </section>
             </details>
-            -->
         </section>
 
 
@@ -303,6 +264,25 @@
                 </li>
                 <li>
                     Company supervisor: <a href="https://www.iis.se/bloggare/staffanh/">Staffan Hagnell</a>, Head of New Businesses, <a href="https://www.iis.se/">.SE (The Internet Infrastructure Foundation)</a>, Sweden.
+                </li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>
+                Open source projects
+            </h2>
+            <p>
+                The power is in your hands.
+                <em>Use the source, Luke!</em>
+            </p>
+            <ul>
+                <li>
+                    <a href="https://github.com/joelpurra/masters-thesis" rel="source">masters-thesis</a>: the source code for the thesis documents.
+                </li>
+                <li>
+                    <a href="https://github.com/joelpurra/masters-thesis-site" rel="source">masters-thesis-site</a>: the source code for this page.
                 </li>
             </ul>
         </section>
