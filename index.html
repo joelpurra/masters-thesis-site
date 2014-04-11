@@ -143,8 +143,22 @@
             </h2>
 
             <p>
-                I maintain two mailing lists for slightly different purposes. Subscribe by sending an email (with any subject and text) to the two email addresses below.
+                I maintain two mailing lists for slightly different purposes. Subscribe by entering your email address in the form, or by sending an email (with any subject and text) to the two email addresses below.
             </p>
+
+            <form method="post" action="http://lists.joelpurra.com/signup/">
+                <input type="hidden" name="maillist-signup-masters-thesis-announce" value="true" />
+                <input type="hidden" name="maillist-signup-masters-thesis-discussion" value="true" />
+                <fieldset>
+                    <legend>
+                        Quick sign up
+                    </legend>
+                    <input name="email" type="email" required="required" placeholder="Your email address" />
+                    <button type="submit">
+                        Subscribe
+                    </button>
+                </fieldset>
+            </form>
 
             <h3>
                 Announcement mailing list
