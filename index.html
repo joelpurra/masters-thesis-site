@@ -108,6 +108,49 @@
         font-size: 0.5em;
     }
     </style>
+    <style>
+    .mediumres,
+    .lowres {
+        display: none;
+    }
+    @media (min-width: 1440px) {
+        .highres {
+            display: block;
+        }
+        .mediumres {
+            display: none;
+        }
+        .lowres {
+            display: none;
+        }
+    }
+    @media (min-width: 900px) and (max-width: 1439px) {
+        .highres {
+            display: none;
+        }
+        .mediumres {
+            display: block;
+        }
+        .lowres {
+            display: none;
+        }
+    }
+    @media (max-width: 899px) {
+        .highres {
+            display: none;
+        }
+        .mediumres {
+            display: none;
+        }
+        .lowres {
+            display: block;
+        }
+    }
+    figure {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
 </head>
 
 <body>
@@ -135,15 +178,52 @@
     </header>
 
     <main>
+        <h1>
+            <em>Swedes Online: You Are More Tracked Than You Think</em>
+        </h1>
+
+        <p>
+            <em class="warning">The thesis is currently in the process of being researched and written!</em>
+        </p>
+
         <section>
-            <h1>
-                <em>Swedes Online: You Are More Tracked Than You Think</em>
-            </h1>
+            <h2>
+                Thesis defense presentation
+            </h2>
 
             <p>
-                <em class="warning">The thesis is currently in the process of being researched and written!</em>
+                <figure class="video multisize">
+                    <!--
+                    <picture>
+                        <source sizes="(min-width: 1440px) 1280w, (min-width: 900px) 854w, 432w" srcset="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_highres.mp4 1280w, http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_mediumres.mp4 854w, http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_lowres.mp4 432w" type="video/mp4" />
+                        <img src="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_mediumres.jpg" alt="Joel Purra standing in front of a projector screen" title="A screenshot of the video from the thesis defense" />
+                    </picture>
+                    -->
+                    <video class="highres" controls="controls" preload="none" poster="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_highres.jpg">
+                        <source src="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_highres.mp4" type="video/mp4" />
+                    </video>
+                    <video class="mediumres" controls="controls" preload="none" poster="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_mediumres.jpg">
+                        <source src="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_mediumres.mp4" type="video/mp4" />
+                    </video>
+                    <video class="lowres" controls="controls" preload="none" poster="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_lowres.jpg">
+                        <source src="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_lowres.mp4" type="video/mp4" /> I'm sorry; the browser couldn't load the video. Try the download links instead.
+                    </video>
+                    <figcaption>
+                        Recording from the master's thesis defense 2015-02-19 at Linköping University. The length is 48:16 minutes.
+                    </figcaption>
+                </figure>
             </p>
 
+            <p>
+                Video download:
+                <a href="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_highres.mp4">high resolution</a> (258 MB),
+                <a href="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_mediumres.mp4">medium resolution</a> (123 MB),
+                <a href="http://joelpurra.com/projects/masters-thesis/files/video/2015-02-19/joel-purra_masters-thesis_2015-02-19_defense_lowres.mp4">low resolution</a> (42 MB).
+            </p>
+        </section>
+
+
+        <section>
             <h2>
                 Abstract
             </h2>
@@ -331,11 +411,11 @@
                 Current datasets include those based on Alexa's top 1.000.000 list from 2014-09-01. Screenshots have not been made available at the moment, but HAR data has. Please use har-dulficy to analyze it.
             </p>
             <ul>
-<!--
+                <!--
                 <li>
                     <a href="http://joelpurra.com/projects/masters-thesis/files/data/latest">latest</a>: List of the most recent data available.
                 </li>
--->
+                -->
                 <li>
                     <a href="http://joelpurra.com/projects/masters-thesis/files/data/latest/alexa.2014-09-01.random.10000-http-www.zip">alexa.2014-09-01.random.10000-http-www.zip</a>
                 </li>
