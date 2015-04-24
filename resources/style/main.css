@@ -1,0 +1,134 @@
+body {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Helvetica Neue, Helvetica, Verdana, sans-serif;
+}
+h2 {
+    margin-top: 2em;
+    border-bottom: 1px solid lightgrey;
+}
+.warning:before {
+    content: "Warning";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.6em;
+    font-family: Helvetica, Verdana, sans-serif;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    margin-right: 0.5em;
+    color: #514721;
+    background-color: #FFF6BF;
+    border: 1px solid #FFD324;
+}
+header {
+    margin-top: 2em;
+    margin-bottom: 5em;
+}
+footer {
+    margin-top: 5em;
+    margin-bottom: 2em;
+}
+h2 time {
+    font-size: small;
+}
+table {
+    width: 100%;
+}
+table col:nth-of-type(odd) {
+    background-color: #f6f6f6;
+}
+table col:nth-of-type(even) {
+    background-color: #f0f0f0;
+}
+table td,
+table th {
+    vertical-align: top;
+    margin: 0;
+}
+table td.number {
+    text-align: right;
+}
+ul.no-bullets li,
+ol.no-bullets li {
+    list-style-type: none;
+}
+ul.inline-menu {
+    margin: 0;
+    padding: 0;
+}
+ul.inline-menu li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+ul.inline-menu li:before {
+    content: " \00B7 ";
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+}
+html.no-js .js-only {
+    display: none;
+}
+html.js .no-js-only {
+    display: none;
+}
+/* *** */
+h1 small,
+h2 small,
+h3 small {
+    color: lightgrey;
+    font-size: 0.5em;
+}
+figcaption {
+    margin-top: 0.5em;
+}
+</style>
+<style>
+.mediumres,
+.lowres {
+    display: none;
+}
+@media (min-width: 1440px) {
+    .highres {
+        display: block;
+    }
+    .mediumres {
+        display: none;
+    }
+    .lowres {
+        display: none;
+    }
+}
+@media (min-width: 900px) and (max-width: 1439px) {
+    .highres {
+        display: none;
+    }
+    .mediumres {
+        display: block;
+    }
+    .lowres {
+        display: none;
+    }
+}
+@media (max-width: 899px) {
+    .highres {
+        display: none;
+    }
+    .mediumres {
+        display: none;
+    }
+    .lowres {
+        display: block;
+    }
+}
+figure {
+    margin: 0;
+    padding: 0;
+}
