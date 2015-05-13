@@ -89,8 +89,7 @@ h3 small {
 figcaption {
     margin-top: 0.5em;
 }
-</style>
-<style>
+
 .mediumres,
 .lowres {
     display: none;
@@ -131,4 +130,15 @@ figcaption {
 figure {
     margin: 0;
     padding: 0;
+}
+.reference {
+    padding: 0.5em;
+    background-color: lightgrey;
+}
+pre code {
+    padding: 0.5em;
+    background-color: lightgrey;
+    display: block;
+    /*white-space: pre-wrap;*/
+    overflow: scroll;
 }
