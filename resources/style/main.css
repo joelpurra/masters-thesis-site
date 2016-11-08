@@ -131,13 +131,19 @@ figure {
     margin: 0;
     padding: 0;
 }
+blockquote,
 .reference {
+    margin-left: 0;
+    margin-right: 0;
     padding: 0.5em;
-    background-color: lightgrey;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    background-color: #eeeeee;
+    border-left: 0.3em solid #ccc;
 }
 pre code {
     padding: 0.5em;
-    background-color: lightgrey;
+    background-color: #f6f6f6;
     display: block;
     /*white-space: pre-wrap;*/
     overflow: scroll;
