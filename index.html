@@ -537,37 +537,45 @@ ER  - </code></pre>
     <script src="./resources/javascript/details-element-polyfill.js"></script>
 
 
+
     <!-- DO NOT COPY THIS SCRIPT TAG -->
     <!-- It's used for my statistics -->
     <!-- DO NOT COPY THIS SCRIPT TAG -->
+    <!-- See also https://joelpurra.com/ -->
+    <!-- See also https://tracker.joelpurra.com/ -->
+    <!-- See also https://joelpurra.com/projects/masters-thesis/ -->
+    <!-- Piwik -->
     <script type="text/javascript">
     //<![CDATA[
     // DO NOT COPY THIS SCRIPT TAG
     // It's used for my statistics
     // DO NOT COPY THIS SCRIPT TAG
-    (function() {
+    (function(global) {
         function isTrackingEnabled() {
             // This code has been duplicated elsewhere in this project.
             // https://stackoverflow.com/questions/23933650/javascript-only-detection-of-do-not-track-settings-in-ie11
             // https://stackoverflow.com/questions/16947459/is-it-possible-to-check-the-value-of-firefox-dnt-with-javascript/16947583#16947583
             // https://www.w3.org/TR/tracking-dnt/#js-dom
             // https://www.w3.org/TR/tracking-dnt/#dnt-header-field
-            var isDNT = window.doNotTrack == "yes" || window.doNotTrack == "1" ||
-                window.msDoNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" ||
-                navigator.msDoNotTrack == "1" || false;
+            var dntValue = window.doNotTrack || window.msDoNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || null;
+            var isDNT = dntValue === "yes" || dntValue === "1";
 
             return !isDNT;
         }
 
         (function() {
             try {
+                // NOTE: optionally insert a <noscript> element with the following id to display a non-tracking notice above it.
+                var noticeElementId = "noscript-tracking-notice";
+                var infoUrl = "https://tracker.joelpurra.com/";
+
                 var noticeStatus = isTrackingEnabled() ? "enabled" : "disabled";
-                var notice = "Active tracking using Google Analytics on this page has been <em>" + noticeStatus + "</em> based on your browser's Do Not Track (DNT) setting. Read more about active tracking in the research."
+                var notice = "Active tracking using Piwik on this page has been <em>" + noticeStatus + "</em> based on your browser's Do Not Track (DNT) setting. Read more <a href=\"" + infoUrl +"\">about active tracking</a>.";
 
                 var noticeElement = document.createElement("p");
                 noticeElement.innerHTML = notice;
 
-                var noscriptTrackingNoticeElement = document.getElementById("noscript-tracking-notice");
+                var noscriptTrackingNoticeElement = document.getElementById(noticeElementId);
 
                 if (noscriptTrackingNoticeElement) {
                     noscriptTrackingNoticeElement.parentNode.insertBefore(noticeElement, noscriptTrackingNoticeElement);
@@ -578,28 +586,38 @@ ER  - </code></pre>
         }());
 
         (function() {
-            if (!isTrackingEnabled()) {
+            if (window.piwikTrack === false || !isTrackingEnabled()) {
                 return;
             }
 
-            (function(i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function() {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            var cookieDomain = "*.joelpurra.com";
 
-            ga('create', 'UA-15653943-1', 'joelpurra.com');
-            ga('send', 'pageview');
+            if (/\.?joelpurra\.(com|se|de)$/.test(document.domain)) {
+                cookieDomain = "*.joelpurra." + RegExp.$1;
+            }
+
+            global._paq = global._paq || [];
+            _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+            _paq.push(["setCookieDomain", cookieDomain]);
+            _paq.push(["setDomains", ["*.joelpurra.com", "*.joelpurra.se", "*.joelpurra.de"]]);
+            _paq.push(["setDoNotTrack", true]);
+            _paq.push(['enableLinkTracking']);
+            _paq.push(['enableHeartBeatTimer', 10]);
+            _paq.push(['trackPageView']);
+            (function() {
+                var u="https://tracker.joelpurra.com/";
+                _paq.push(['setTrackerUrl', u+'piwik.php']);
+                _paq.push(['setSiteId', '1']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+            })();
         }());
-    }());
+    }(window));
     //]]>
     </script>
+    <noscript><p><img src="https://tracker.joelpurra.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
 
 
 </body>
