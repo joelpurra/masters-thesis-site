@@ -90,6 +90,12 @@ figcaption {
     margin-top: 0.5em;
 }
 
+.small-icon.pdf:before {
+    content: url("../image/pdf.png");
+    padding-right: 3px;
+    vertical-align: middle;
+}
+
 .mediumres,
 .lowres {
     display: none;
